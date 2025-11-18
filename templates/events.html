@@ -1,14 +1,14 @@
 {% if events %}
-<table>
-  <thead>
+<table class="table table-striped mt-3 align-middle">
+  <thead class="table-light">
     <tr><th>#</th><th>Event</th><th>Link</th><th>Deadline</th><th>Event Date</th></tr>
   </thead>
   <tbody>
   {% for e in events %}
     <tr>
       <td>{{ loop.index }}</td>
-      <td>{{ e.name }}</td>
-      <td><a href="{{ e.link }}" target="_blank">Open</a></td>
+      <td class="fw-semibold">{{ e.name }}</td>
+      <td><a href="{{ e.link }}" target="_blank" class="btn btn-sm btn-outline-primary">Open</a></td>
       <td>{{ e.deadline or "TBD" }}</td>
       <td>{{ e.event_date or "TBD" }}</td>
     </tr>
@@ -16,5 +16,5 @@
   </tbody>
 </table>
 {% else %}
-<p>No events found.</p>
+<div class="alert alert-info">No events found.</div>
 {% endif %}
