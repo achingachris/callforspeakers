@@ -4,63 +4,45 @@
   "events": [
     {
       "name": "PyCon Philippines",
-      "link": "https://x.com/pyconph/status/1973342138042818835?s=46",
-      "deadline": null,
-      "event_date": null
-    },
-    {
-      "name": "PyCon Philippines (LinkedIn Post)",
-      "link": "https://www.linkedin.com/posts/thokomiya_october2025-activity-7379415290230607873-pV9z",
-      "deadline": null,
-      "event_date": null
+      "link": "https://pretalx.com/python-asia-2026/",
+      "deadline": "November 30, 2025",
+      "event_date": "March 21-23, 2026"
     },
     {
       "name": "WeAreDevelopers World Congress 2026 Europe",
       "link": "https://sessionize.com/wearedevelopers-world-congress-2026-europe",
-      "deadline": null,
-      "event_date": null
+      "deadline": "Jan 16, 2026",
+      "event_date": "Jul 8-10, 2026"
     },
     {
       "name": "WeAreDevelopers World Congress 2026 US",
       "link": "https://sessionize.com/wearedevelopers-world-congress-2026-us",
-      "deadline": null,
-      "event_date": null
-    },
-    {
-      "name": "PyCascades",
-      "link": "https://www.pycascades.com/news/cfp-review/",
-      "deadline": null,
-      "event_date": null
+      "deadline": "Mar 31, 2026",
+      "event_date": "Sep 23-25, 2026"
     },
     {
       "name": "PyCon DE",
       "link": "https://2026.pycon.de",
       "deadline": null,
-      "event_date": null
-    },
-    {
-      "name": "Function Conference",
-      "link": "https://fnctn1.com/",
-      "deadline": null,
-      "event_date": null
+      "event_date": "April 14-16, 2026"
     },
     {
       "name": "PG Data 2026",
       "link": "https://sessionize.com/pg-data-2026",
-      "deadline": null,
-      "event_date": null
+      "deadline": "Jan 5, 2026",
+      "event_date": "Jun 4-5, 2026"
     },
     {
-      "name": "PyCascades 2026 (Pretalx)",
+      "name": "PyCascades 2026",
       "link": "https://pretalx.com/pycascades-2026/cfp",
-      "deadline": null,
-      "event_date": null
+      "deadline": "November 4, 2025",
+      "event_date": "March 21-22, 2026"
     },
     {
       "name": "FOSDEM 2026 Devrooms",
       "link": "https://fosdem.org/2026/news/2025-10-31-devrooms-announced/",
       "deadline": null,
-      "event_date": null
+      "event_date": "January 31 - February 1, 2026"
     }
   ]
 }

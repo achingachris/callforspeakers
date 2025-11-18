@@ -1,19 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="d-flex align-items-center justify-content-between mb-3">
-  <h2 class="mb-0">{{ title }} ({{ year }})</h2>
+<div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2 mb-3">
+  <div>
+    <h2 class="mb-0">{{ title }} ({{ year }})</h2>
+    <p class="mb-0 text-muted small">Search and filter your CFP opportunities</p>
+  </div>
 </div>
 
-<input
-  type="text"
-  class="form-control"
-  name="q"
-  placeholder="Search events"
-  hx-get="/partial/events"
-  hx-target="#results"
-  hx-trigger="keyup changed delay:200ms"
-/>
+<div class="mb-3">
+  <input
+    type="text"
+    class="form-control"
+    name="q"
+    placeholder="Search events, for example PyCon, WeAreDevelopers, FOSDEM"
+    hx-get="/partial/events"
+    hx-target="#results"
+    hx-trigger="keyup changed delay:200ms"
+  >
+</div>
 
 <div id="results">
   {% include "events.html" %}

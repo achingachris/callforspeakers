@@ -1,20 +1,42 @@
 {% if events %}
-<table class="table table-striped mt-3 align-middle">
-  <thead class="table-light">
-    <tr><th>#</th><th>Event</th><th>Link</th><th>Deadline</th><th>Event Date</th></tr>
-  </thead>
-  <tbody>
-  {% for e in events %}
-    <tr>
-      <td>{{ loop.index }}</td>
-      <td class="fw-semibold">{{ e.name }}</td>
-      <td><a href="{{ e.link }}" target="_blank" class="btn btn-sm btn-outline-primary">Open</a></td>
-      <td>{{ e.deadline or "TBD" }}</td>
-      <td>{{ e.event_date or "TBD" }}</td>
-    </tr>
-  {% endfor %}
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table class="table table-striped mt-2 align-middle mb-0">
+    <thead class="table-light">
+      <tr>
+        <th scope="col" class="text-nowrap">#</th>
+        <th scope="col">Event</th>
+        <th scope="col" class="text-nowrap text-center">Link</th>
+        <th scope="col" class="text-nowrap d-none d-md-table-cell">Deadline</th>
+        <th scope="col" class="text-nowrap d-none d-md-table-cell">Event Date</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for e in events %}
+      <tr>
+        <td class="text-muted">{{ loop.index }}</td>
+        <td class="fw-semibold">
+          <div>{{ e.name }}</div>
+          <div class="d-md-none mt-1">
+            <span class="badge bg-light text-dark border me-1">
+              Deadline: {{ e.deadline or "TBD" }}
+            </span>
+            <span class="badge bg-light text-dark border">
+              Event: {{ e.event_date or "TBD" }}
+            </span>
+          </div>
+        </td>
+        <td class="text-center">
+          <a href="{{ e.link }}" target="_blank" class="btn btn-sm btn-outline-primary w-100 w-sm-auto">
+            Open
+          </a>
+        </td>
+        <td class="d-none d-md-table-cell text-nowrap">{{ e.deadline or "TBD" }}</td>
+        <td class="d-none d-md-table-cell text-nowrap">{{ e.event_date or "TBD" }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
 {% else %}
-<div class="alert alert-info">No events found.</div>
+<div class="alert alert-info mb-0">No events found.</div>
 {% endif %}
