@@ -1,63 +1,61 @@
+from pathlib import Path
+import json
 
+from fastapi import FastAPI, Request, Query
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 
 from typing import Union
-from fastapi import FastAPI
-
-app = FastAPI()
-
-SPEAKER_APPLICATIONS = {
-    "year": 2026,
-    "title": "Speaker Applications",
-    "events": [
-        {
-            "name": "PyCon Philippines",
-            "link": "https://x.com/pyconph/status/1973342138042818835?s=46"
-        },
-        {
-            "name": "PyCon Philippines (LinkedIn Post)",
-            "link": "https://www.linkedin.com/posts/thokomiya_october2025-activity-7379415290230607873-pV9z"
-        },
-        {
-            "name": "WeAreDevelopers World Congress 2026 Europe",
-            "link": "https://sessionize.com/wearedevelopers-world-congress-2026-europe"
-        },
-        {
-            "name": "WeAreDevelopers World Congress 2026 US",
-            "link": "https://sessionize.com/wearedevelopers-world-congress-2026-us"
-        },
-        {
-            "name": "PyCascades",
-            "link": "https://www.pycascades.com/news/cfp-review/"
-        },
-        {
-            "name": "PyCon DE",
-            "link": "https://2026.pycon.de"
-        },
-        {
-            "name": "Function Conference",
-            "link": "https://fnctn1.com/"
-        },
-        {
-            "name": "PG Data 2026",
-            "link": "https://sessionize.com/pg-data-2026"
-        },
-        {
-            "name": "PyCascades 2026 (Pretalx)",
-            "link": "https://pretalx.com/pycascades-2026/cfp"
-        },
-        {
-            "name": "FOSDEM 2026 Devrooms",
-            "link": "https://fosdem.org/2026/news/2025-10-31-devrooms-announced/"
-        }
-    ]
-}
 
 
-@app.get("/")
-def read_root():
-    return SPEAKER_APPLICATIONS
+app = FastAPI(title="2026 Call For Speakers Explorer")
 
+BASE_DIR = Path(__file__).resolve().parent
+DATA_PATH = BASE_DIR / "cfp.json"
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+with DATA_PATH.open() as f:
+    CFP_DATA = json.load(f)
+
+EVENTS = CFP_DATA["events"]
+
+templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
+
+@app.get("/", response_class=HTMLResponse)
+async def home(request: Request, q: str | None = Query(default=None)):
+    if q:
+        q_lower = q.lower()
+        filtered_events = [e for e in EVENTS if q_lower in e["name"].lower()]
+    else:
+        filtered_events = EVENTS
+
+    context = {
+        "request": request,
+        "year": CFP_DATA["year"],
+        "title": CFP_DATA["title"],
+        "events": filtered_events,
+        "query": q or "",
+        "total_events": len(EVENTS),
+        "shown_events": len(filtered_events),
+    }
+    return templates.TemplateResponse("index.html", context)
+
+@app.get("/api/events")
+async def list_events():
+    return {
+        "year": CFP_DATA["year"],
+        "title": CFP_DATA["title"],
+        "events": EVENTS,
+    }
+    
+@app.get("/api/events/search")
+async def search_events(q: str):
+    q_lower = q.lower()
+    filtered_events = [e for e in EVENTS if q_lower in e["name"].lower()]
+    return {
+        "year": CFP_DATA["year"],
+        "title": CFP_DATA["title"],
+        "query": q,
+        "events": filtered_events,
+        "total": len(filtered_events),
+    }
+    

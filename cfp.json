@@ -4,43 +4,53 @@
   "events": [
     {
       "name": "PyCon Philippines",
-      "link": "https://x.com/pyconph/status/1973342138042818835?s=46"
+      "link": "https://x.com/pyconph/status/1973342138042818835?s=46",
+      "deadline": "2026-01-15"
     },
     {
       "name": "PyCon Philippines (LinkedIn Post)",
-      "link": "https://www.linkedin.com/posts/thokomiya_october2025-activity-7379415290230607873-pV9z"
+      "link": "https://www.linkedin.com/posts/thokomiya_october2025-activity-7379415290230607873-pV9z",
+      "deadline": "2026-01-15"
     },
     {
       "name": "WeAreDevelopers World Congress 2026 Europe",
-      "link": "https://sessionize.com/wearedevelopers-world-congress-2026-europe"
+      "link": "https://sessionize.com/wearedevelopers-world-congress-2026-europe",
+      "deadline": "2026-02-28"
     },
     {
       "name": "WeAreDevelopers World Congress 2026 US",
-      "link": "https://sessionize.com/wearedevelopers-world-congress-2026-us"
+      "link": "https://sessionize.com/wearedevelopers-world-congress-2026-us",
+      "deadline": "2026-03-15"
     },
     {
       "name": "PyCascades",
-      "link": "https://www.pycascades.com/news/cfp-review/"
+      "link": "https://www.pycascades.com/news/cfp-review/",
+      "deadline": "2026-01-31"
     },
     {
       "name": "PyCon DE",
-      "link": "https://2026.pycon.de"
+      "link": "https://2026.pycon.de",
+      "deadline": "2026-02-15"
     },
     {
       "name": "Function Conference",
-      "link": "https://fnctn1.com/"
+      "link": "https://fnctn1.com/",
+      "deadline": "2026-03-01"
     },
     {
       "name": "PG Data 2026",
-      "link": "https://sessionize.com/pg-data-2026"
+      "link": "https://sessionize.com/pg-data-2026",
+      "deadline": "2026-02-01"
     },
     {
       "name": "PyCascades 2026 (Pretalx)",
-      "link": "https://pretalx.com/pycascades-2026/cfp"
+      "link": "https://pretalx.com/pycascades-2026/cfp",
+      "deadline": "2026-01-31"
     },
     {
       "name": "FOSDEM 2026 Devrooms",
-      "link": "https://fosdem.org/2026/news/2025-10-31-devrooms-announced/"
+      "link": "https://fosdem.org/2026/news/2025-10-31-devrooms-announced/",
+      "deadline": "2025-12-15"
     }
   ]
 }
