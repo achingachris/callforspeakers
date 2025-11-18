@@ -1,0 +1,20 @@
+{% if events %}
+<table>
+  <thead>
+    <tr><th>#</th><th>Event</th><th>Link</th><th>Deadline</th><th>Event Date</th></tr>
+  </thead>
+  <tbody>
+  {% for e in events %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ e.name }}</td>
+      <td><a href="{{ e.link }}" target="_blank">Open</a></td>
+      <td>{{ e.deadline or "TBD" }}</td>
+      <td>{{ e.event_date or "TBD" }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>No events found.</p>
+{% endif %}
