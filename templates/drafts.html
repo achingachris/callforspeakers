@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2 mb-3">
+  <div>
+    <h2 class="mb-0">Draft submissions</h2>
+    <p class="mb-0 text-muted small">Drafts stay here until approved and published.</p>
+  </div>
+  <div class="d-flex gap-2">
+    <a href="/" class="btn btn-outline-secondary btn-sm">Back to events</a>
+    <a href="/submit" class="btn btn-primary btn-sm">Submit new event</a>
+  </div>
+</div>
+
+{% if drafts %}
+<div class="table-responsive">
+  <table class="table table-striped align-middle mb-0">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Event</th>
+        <th scope="col" class="text-nowrap">Link</th>
+        <th scope="col" class="text-nowrap d-none d-md-table-cell">Deadline</th>
+        <th scope="col" class="text-nowrap d-none d-md-table-cell">Event Date</th>
+        <th scope="col" class="text-nowrap">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for draft in drafts %}
+      <tr>
+        <td class="fw-semibold">
+          <div>{{ draft.name }}</div>
+          <div class="d-md-none mt-1 text-muted small">
+            <div>Deadline: {{ draft.deadline or "TBD" }}</div>
+            <div>Event: {{ draft.event_date or "TBD" }}</div>
+          </div>
+        </td>
+        <td class="text-truncate" style="max-width: 260px;">
+          <a href="{{ draft.link }}" target="_blank" class="text-decoration-none">{{ draft.link }}</a>
+        </td>
+        <td class="d-none d-md-table-cell text-nowrap">{{ draft.deadline or "TBD" }}</td>
+        <td class="d-none d-md-table-cell text-nowrap">{{ draft.event_date or "TBD" }}</td>
+        <td><span class="badge bg-secondary">{{ draft.status|capitalize }}</span></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="alert alert-info mb-0">No drafts yet. Submit a new event to start the approval flow.</div>
+{% endif %}
+{% endblock %}

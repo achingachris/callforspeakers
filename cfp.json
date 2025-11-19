@@ -43,6 +43,24 @@
       "link": "https://fosdem.org/2026/news/2025-10-31-devrooms-announced/",
       "deadline": null,
       "event_date": "January 31 - February 1, 2026"
+    },
+    {
+      "name": "Pycon US 2026",
+      "link": "https://pretalx.com/pycon-us-2026/",
+      "deadline": "December 19, 2025",
+      "event_date": "May 13-19, 2026"
+    },
+    {
+      "name": "DjangoCon Europe 2026",
+      "link": "https://2026.djangocon.eu",
+      "deadline": null,
+      "event_date": "April 15\u201317, 2026"
+    },
+    {
+      "name": "DjangoCon US 2026",
+      "link": "https://2026.djangocon.us/",
+      "deadline": null,
+      "event_date": "September 14-18, 2026"
     }
   ]
 }
