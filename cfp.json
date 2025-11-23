@@ -61,6 +61,12 @@
       "link": "https://2026.djangocon.us/",
       "deadline": null,
       "event_date": "September 14-18, 2026"
+    },
+    {
+      "name": "PGConf.dev 2026",
+      "link": "https://2026.pgconf.dev/",
+      "deadline": "January 16, 2026",
+      "event_date": "May 19-122, 2026"
     }
   ]
 }
