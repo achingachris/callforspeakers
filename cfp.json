@@ -67,6 +67,12 @@
       "link": "https://2026.pgconf.dev/",
       "deadline": "January 16, 2026",
       "event_date": "May 19-122, 2026"
+    },
+    {
+      "name": "Pycon Namibia 2026",
+      "link": "https://na.pycon.org/speaking/",
+      "deadline": "December 1st, 2025",
+      "event_date": "February 20 - 26, 2026"
     }
   ]
 }
